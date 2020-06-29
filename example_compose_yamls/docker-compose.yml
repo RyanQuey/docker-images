@@ -1,3 +1,6 @@
+# NOTE I'm not sure if running this links it to the ops center
+# no spark or anything
+
 version: '2'
 services:
   seed_node:

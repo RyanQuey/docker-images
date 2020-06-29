@@ -2,6 +2,7 @@ version: '2'
 services:
   opscenter:
     image: "datastax/dse-opscenter"
+    container_name: opscenter
     ports:
       - 8888:8888
     environment:

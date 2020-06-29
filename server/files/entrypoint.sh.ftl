@@ -100,6 +100,9 @@ if should_auto_configure "$CASSANDRA_RACK_CONFIG" ; then
     echo "done."
 fi
 
+# want to link without doing docker run --link (since it's deprecated and makes debugging harder)
+
+# if don't have OPSCENTER_IP set yet, try setting via hosts
 [ -z "$OPSCENTER_IP" ] && OPSCENTER_IP=$(getent hosts opscenter | awk '{ print $1 }')
 if [ ! -z "$OPSCENTER_IP" ]; then
     echo "Configuring agent to connect to OpsCenter (${OPSCENTER_IP}) "
