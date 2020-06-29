@@ -9,6 +9,8 @@ services:
     - IPC_LOCK
     ulimits:
       memlock: -1
+    ports:
+      - 9042:9042 # make accessible from DSE studio in vm host browser
   node:
     image: "datastax/dse-server:6.7.8"
     environment:
